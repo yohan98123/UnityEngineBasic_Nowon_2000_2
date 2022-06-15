@@ -1,11 +1,14 @@
 ﻿using System;
 
+//int count; // 전역 (글로벌) 변수
 namespace Variables
 {
      class Program
     {
         static void Main(string[] args)
         {
+            // 0000(28개)... 1110
+            Human.age = 13; // = 2^3 + 2^2 + 2^1
             Console.WriteLine(".");
             Console.WriteLine(Human.age);
             
@@ -27,7 +30,7 @@ namespace Variables
         public static int age; // 4 byte 정수 -2^31 ~ 2^31 - 1
         private float height; // 4 byte 실수형
         double weight; // 8 byte 실수형
-        bool isFemale; // 1 byte 논리형 { 참과 거짓 표현 }
+        bool isResting; // 1 byte 논리형 { 참과 거짓 표현 }
         // 참 : 0이 아닌 숫자, 거짓 : 0
         char genderChar; // 2 byte 문자형 ( ASCII 코드로 표현 )
         string name; // 문자열형. 문자갯수 * 2byte + 1 byte ( null )
