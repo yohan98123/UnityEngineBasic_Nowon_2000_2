@@ -1,0 +1,15 @@
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.exe
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.deps.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.runtimeconfig.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.runtimeconfig.dev.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\ref\Statements_if.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\bin\Debug\net5.0\Statements_if.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\ref\Statements_if.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Statements_if\obj\Debug\net5.0\Statements_if.genruntimeconfig.cache
