@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kMkdwOWPEIyNIb93uKkWbcAAbrwJwi/nI/FibHxtfpf/OAA+50cdtJrHd9nGy5XikWU1fvYC7jSnNTzufAHKRA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\UnityLesson_CSharp_Operator\\UnityLesson_CSharp_Operator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

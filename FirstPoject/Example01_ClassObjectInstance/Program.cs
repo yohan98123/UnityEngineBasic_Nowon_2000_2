@@ -54,7 +54,7 @@ namespace Example01_ClassObjectInstance
             public bool IsResting;
             public void Smash()
             {
-                Console.WriteLine($"{name}(이)가 휘둘렀다");
+                Console.WriteLine($"{name}(이)가 휘둘렀다!");
             }
             public void Jump()
             {
