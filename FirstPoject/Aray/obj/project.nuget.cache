@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gu+SZ8u8s8QgXXStL7lwhyc0Nb3ZvDgUB7fiMD24gJ21aOQhSIFsmSBDLrtXObB5neUEIutadMEvYlSZbS0pMA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Aray\\Aray.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}
