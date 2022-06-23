@@ -8,7 +8,7 @@ namespace OperatorMethods
 {
     public class OperatorMethods
     {
-        //산술 연산
+        //산술 연산 
         
         // 더하기
         static public int Sum(int a, int b)

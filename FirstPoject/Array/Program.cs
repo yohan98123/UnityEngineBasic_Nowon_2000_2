@@ -36,7 +36,7 @@ namespace Array
             String tmpString = new String(arrChar);
             Console.WriteLine(tmpString);
             string tmpString2 = "Luke";
-            Console.WriteLine(tmpString2[0]);        
+            Console.WriteLine(tmpString2[3]);        
 
 
         }
