@@ -59,20 +59,20 @@ namespace Statement_Loops
                 { 4, 5, 6, 0, 4},
             };
 
-            for (int i = 0;i <  mat2D.GetLength(0);i++)
+            for (int i = 0; i <  mat2D.GetLength(0);i++)
             {
                 for (int j = 0; j < mat2D.GetLength(1); j++)
                 {
-                    Console.Write(mat2D[i,j] + ", ");
+                    Console.Write(mat2D[i,j] + ",");
                 }
                 Console.WriteLine();
             }
 
-            int[][] arr2D = new int[5][];
-            for (int i = 0; i < arr2D.Length; i++)
-            {
-                arr2D[i] = new int[3];
-            }
+           //int[][] arr2D = new int[5][];
+           //for (int i = 0; i < arr2D.Length; i++)
+           //{
+           //    arr2D[i] = new int[3];
+           //}
             
             // var : 변수에대한 자료형을 알아서 선언해줌
             // collection 내의 모든 요소들에 접근
@@ -82,10 +82,10 @@ namespace Statement_Loops
             //
             //}
 
-            foreach (int item in tmpArr)
-            {
-                Console.WriteLine(item);
-            }
+           foreach (int item in tmpArr)
+           {
+               Console.WriteLine(item);
+           }
         }
 
     }
