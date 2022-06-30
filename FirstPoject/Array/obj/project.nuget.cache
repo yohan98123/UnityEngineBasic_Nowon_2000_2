@@ -1,10 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "C4tfSL00PpCDDp3hspRKkgOPpF+9lEwV3/haKGSdKoaIXjl/ZpBuNbqawUFT5a/aQKtCGuCIO10WMCfOZ023lA==",
-  "success": true,
+  "dgSpecHash": "+EtADfYKb5grpJ3nt2k0FDRI1ln3HxvwFGMSbHa9rKfmQqXi3Fl2Yhl5rqqY4tTFmZNYiJxERBvkBMVAdIF6KA==",
+  "success": false,
   "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Array\\Array.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "FirstPoject 프로젝트가 net5.0(.NETCoreApp,Version=v5.0)과(와) 호환되지 않습니다. FirstPoject 프로젝트는 다음을 지원합니다. net6.0(.NETCoreApp,Version=v6.0)",
+      "libraryId": "FirstPoject",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

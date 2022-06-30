@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "FirstPoject/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FirstPoject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FirstPoject.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FirstPoject/1.0.0": {
+      "type": "project",
+      "path": "../FirstPoject/FirstPoject.csproj",
+      "msbuildProject": "../FirstPoject/FirstPoject.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "FirstPoject >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\FirstPoject\\FirstPoject.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\FirstPoject\\FirstPoject.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -69,5 +92,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "FirstPoject 프로젝트가 net5.0(.NETCoreApp,Version=v5.0)과(와) 호환되지 않습니다. FirstPoject 프로젝트는 다음을 지원합니다. net6.0(.NETCoreApp,Version=v6.0)",
+      "libraryId": "FirstPoject",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
