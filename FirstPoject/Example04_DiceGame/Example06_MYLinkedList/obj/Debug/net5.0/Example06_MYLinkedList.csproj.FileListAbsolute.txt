@@ -1,0 +1,16 @@
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.AssemblyInfo.cs
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.exe
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.deps.json
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.runtimeconfig.json
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.runtimeconfig.dev.json
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.dll
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\bin\Debug\net5.0\Example06_MYLinkedList.pdb
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.dll
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\refint\Example06_MYLinkedList.dll
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.pdb
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\Example06_MYLinkedList.genruntimeconfig.cache
+C:\Users\USER\source\repos\UnityEngineBasic_Nowon_2000_2200\FirstPoject\Example04_DiceGame\Example06_MYLinkedList\obj\Debug\net5.0\ref\Example06_MYLinkedList.dll
