@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Example07_MyHashTable/1.0.0": {
+        "runtime": {
+          "Example07_MyHashTable.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Example07_MyHashTable/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
