@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Example04_DiceGame
+namespace Example05_DiceGame
 {
     internal class Program
     {

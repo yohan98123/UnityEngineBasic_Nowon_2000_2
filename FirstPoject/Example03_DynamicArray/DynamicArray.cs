@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Example03_DynamicArray
 {
     // const = constant / 해당 변수를 상수형태로 취급하겠다는 키워드
-    internal class DynamicArray<T>
+    internal class DynamicArray<T> : IEnumerator<T>
+    {
     {
         private const int DEFAULT_SIZE = 1;
         private T[] _data = new T[DEFAULT_SIZE];
@@ -78,5 +79,68 @@ namespace Example03_DynamicArray
             _data[Length - 1] = default(T);
             Length--;
         }
+
+        public IEnumerator<T> GetEnumerator()
+
+        {
+            throw new DynamicArrayEnum<T>(_data);
+        }
+
+        IEnumerator<T> IEnumerable.GetEnumerator()
+
+        {
+            throw new NotlmplemntedException();
+        }
+
+        public class DynamicArrayEnum<T> : IEnumerator<T>
+        {
+            private readonly T[] _data;
+            private int index = -1
+
+            public T Current
+            {
+                get
+                {
+                    // 예외 캐치 시도
+                    try
+                    {
+                        return _data[index];
+                    }
+
+                    //예외가 잡히면 실행할 내용
+                    catch
+                    {
+                        throw new inValidOperationException();
+                    }
+                }
+            }
+            object IEnumerator.Current { get => Current; 
+            }
+
+            public DynamicArrayEnum(T[] data)
+                => _data = data;
+    
+            public void Dispose()
+            {
+                throw new NotlmplementedException();
+            }
+
+            protected virtual void Dispose()
+            {
+
+            }
+
+            public bool MoveNext()
+            {
+                index++;
+                return (index >= 0) && (index < _data.Length);
+
+            }
+
+            public void Reset()
+            {
+
+            }
+
     }
 }

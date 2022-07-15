@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Example04_DiceGame
+namespace Example05_DiceGame
 {
     internal class TileInfo
     {

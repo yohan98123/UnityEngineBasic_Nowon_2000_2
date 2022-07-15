@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Example04_DiceGame\\Example04_DiceGame\\Example04_DiceGame.csproj",
-      "projectName": "Example04_DiceGame",
-      "projectPath": "C:\\Users\\USER\\source\\repos\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Example04_DiceGame\\Example04_DiceGame\\Example04_DiceGame.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Example04_DiceGame\\Example04_DiceGame\\Example05_DiceGame.csproj",
+      "projectName": "Example05_DiceGame",
+      "projectPath": "C:\\Users\\USER\\source\\repos\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Example04_DiceGame\\Example04_DiceGame\\Example05_DiceGame.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\USER\\source\\repos\\UnityEngineBasic_Nowon_2000_2200\\FirstPoject\\Example04_DiceGame\\Example04_DiceGame\\obj\\",
       "projectStyle": "PackageReference",

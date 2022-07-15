@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Example06_MYLinkedList
 {
-    internal class MyLinkedList<T>
+    internal class MyLinkedListEnum<T> : IEnumerator<T>
     {
+
         // inner class : 클래스 내의 클래스 타입 정의
         public class Node<K>
         {
@@ -38,6 +40,11 @@ namespace Example06_MYLinkedList
                 return tmpCount;
             }
         }
+
+        public T Current => throw new NotImplementedException();
+
+        object IEnumerator.Current => throw new NotImplementedException();
+
         public void AddFirst(T value)
         {
             tmp1 = new Node<T>(value);
@@ -181,6 +188,21 @@ namespace Example06_MYLinkedList
                 tmp1 = tmp1.next;
             }
             return nodes;
+        }
+
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
