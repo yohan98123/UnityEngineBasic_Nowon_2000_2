@@ -33,7 +33,7 @@ public class HorseMove : MonoBehaviour
     private void FixedUpdate()
     {
         if (_doMove &&
-            _moveDistance < _targetDistance)
+            isFinished == false)
         Move();
     }
 
