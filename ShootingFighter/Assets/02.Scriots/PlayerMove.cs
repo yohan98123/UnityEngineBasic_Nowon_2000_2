@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private float moveSpeed;
     private Transform _tr;
 
     private void Awake()
     {
         _tr = transform;
     }
+
     private void FixedUpdate()
     {
-        
+        // Input.GetxxxRaw : 0 ??? 1 ???
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         Vector3 dir = new Vector3(h, 0, v).normalized;
-        Vector3 deltaMove = dir * _moveSpeed * Time.fixedDeltaTime;
+        Vector3 deltaMove = dir * moveSpeed * Time.fixedDeltaTime;
 
         _tr.Translate(deltaMove);
-
     }
 }
