@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02,.Scripts\TileInfo.cs" />
-    <Compile Include="Assets\02,.Scripts\TileInfoStar.cs" />
     <Compile Include="Assets\02,.Scripts\Constants.cs" />
-    <Compile Include="Assets\02,.Scripts\GameManager.cs" />
+    <Compile Include="Assets\02,.Scripts\TileInfoStar.cs" />
     <Compile Include="Assets\02,.Scripts\Player.cs" />
+    <Compile Include="Assets\02,.Scripts\GameManager.cs" />
+    <Compile Include="Assets\02,.Scripts\DiceAnimationUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
