@@ -62,6 +62,9 @@
     <Compile Include="Assets\02,.Scripts\Player.cs" />
     <Compile Include="Assets\02,.Scripts\GameManager.cs" />
     <Compile Include="Assets\02,.Scripts\DiceAnimationUI.cs" />
+    <Compile Include="Assets\02,.Scripts\TileInfoDice.cs" />
+    <Compile Include="Assets\02,.Scripts\TileInfoGoldenDice.cs" />
+    <Compile Include="Assets\02,.Scripts\TileInfoInverse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
