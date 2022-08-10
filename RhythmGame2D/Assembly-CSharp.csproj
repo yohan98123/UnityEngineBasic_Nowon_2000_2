@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\SongData.cs" />
+    <Compile Include="Assets\02.Scripts\Constants.cs" />
     <Compile Include="Assets\02.Scripts\NotesMaker.cs" />
     <Compile Include="Assets\02.Scripts\GameManager.cs" />
     <Compile Include="Assets\02.Scripts\NoteData.cs" />
@@ -65,7 +66,8 @@
     <Compile Include="Assets\02.Scripts\SongSelector.cs" />
     <Compile Include="Assets\02.Scripts\NoteSpawner.cs" />
     <Compile Include="Assets\02.Scripts\NoteHitter.cs" />
-    <Compile Include="Assets\02.Scripts\Constants.cs" />
+    <Compile Include="Assets\02.Scripts\ScoringText.cs" />
+    <Compile Include="Assets\02.Scripts\HitTypePopText.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

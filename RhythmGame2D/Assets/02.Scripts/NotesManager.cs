@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class NotesManager : MonoBehaviour
 {
-    public static float noteSpeedScale = 3f;
+    public static float noteSpeedScale = 10f;
     private Dictionary<KeyCode, NoteSpawner> _spawners = new Dictionary<KeyCode, NoteSpawner>();
     private Queue<NoteData> _notedataQueue = new Queue<NoteData>();
 
@@ -18,20 +18,20 @@ public class NotesManager : MonoBehaviour
         get => _spawnersPoint.position.y - _noteHittersPoint.position.y;
     }
 
-    [SerializeField] private VideoPlayer _videoPlayer;
+    
 
     public float noteFallingTime
     {
         get => noteFallingDistance / noteSpeedScale;
     }
 
+    [SerializeField] private VideoPlayer _videoPlayer;
     public void StartSpawn()
     {
         if (_notedataQueue.Count > 0)
-        {
-            _videoPlayer.clip = SongSelector.instance.clip;
-            _videoPlayer.Play();
+        {          
             StartCoroutine(E_Spawning());
+            Invoke("PlayVideoPlayer", noteFallingTime);
         }
     }
 
@@ -42,7 +42,7 @@ public class NotesManager : MonoBehaviour
         {
             for (int i = 0; i < _notedataQueue.Count; i++)
             {
-                if(_notedataQueue.Peek().time < (Time.time - startTimeMark) / noteSpeedScale)
+                if(_notedataQueue.Peek().time < (Time.time - startTimeMark))
                 {
                     NoteData noteData = _notedataQueue.Dequeue();
 
@@ -52,9 +52,16 @@ public class NotesManager : MonoBehaviour
                 {
                     break;
                 }
-                yield return null;
+                
             }
+            yield return null;
         }
+    }
+
+    private void PlayVideoPlayer()
+    {
+        _videoPlayer.clip = SongSelector.instance.clip;
+        _videoPlayer.Play();
     }
     private void Awake()
     {      
