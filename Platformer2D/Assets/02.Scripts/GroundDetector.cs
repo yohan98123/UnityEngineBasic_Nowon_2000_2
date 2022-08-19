@@ -8,11 +8,10 @@ public class GroundDetector : MonoBehaviour
     {
         get => _detectedGround != null ? true : false;
     }
-
     public bool isIgnoringGround { get; private set; }
     public bool isGroundChanged
     {
-        get => _previousGround != _lastGround? true : false;
+        get => _previousGround != _lastGround ? true : false;
     }
 
     private CapsuleCollider2D _col;
@@ -32,6 +31,8 @@ public class GroundDetector : MonoBehaviour
         if (_ignoringGround != null)
             StartCoroutine(E_IgnoreGroundUntilPassedIt(_ignoringGround));
     }
+
+
     private void Awake()
     {
         _col = GetComponent<CapsuleCollider2D>();
@@ -52,6 +53,7 @@ public class GroundDetector : MonoBehaviour
         {
             _previousGround = _lastGround;
         }
+
     }
 
     IEnumerator E_IgnoreGroundUntilPassedIt(Collider2D targetCol)
@@ -60,12 +62,12 @@ public class GroundDetector : MonoBehaviour
         Physics2D.IgnoreCollision(_col, targetCol, true);
         float targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
 
-        //플레이어가 타겟 그라운드를 지나가는지 체크
+        // 플레이어가 타겟 그라운드를 지나는지 체크
         yield return new WaitUntil(() =>
         {
             return _col.transform.position.y < targetColCenter - targetCol.offset.y;
         });
-        
+
         yield return new WaitUntil(() =>
         {
             bool isPassed = false;
@@ -73,8 +75,8 @@ public class GroundDetector : MonoBehaviour
             {
                 targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
 
-                //올라가면서 통과, 내려가면서 통과 체크
-                if (_col.transform.position.y > targetColCenter + _col.size.y +_size.y ||
+                // 올라가면서 통과, 내려가면서 통과 체크
+                if (_col.transform.position.y > targetColCenter + _col.size.y + _size.y ||
                     _col.transform.position.y + _col.size.y < targetColCenter - _col.size.y - _size.y)
                 {
                     isPassed = true;
@@ -85,7 +87,6 @@ public class GroundDetector : MonoBehaviour
                 isPassed = true;
             }
             return isPassed;
-
         });
 
         Physics2D.IgnoreCollision(_col, targetCol, false);
