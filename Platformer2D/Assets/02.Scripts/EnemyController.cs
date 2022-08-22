@@ -122,26 +122,23 @@ public class EnemyController : MonoBehaviour
     private float _hurtTime;
     private float _dieTime;
 
-    [SerializeField] private Vector2 _KnockBackForce;
-
+    [SerializeField] private Vector2 _knockBackForce;
     public void TryHurt()
     {
         if (_state == State.Hurt)
-            _animationTimer -= _hurtTime;
+            _animationTimer = _hurtTime;
         else
             ChangeState(State.Hurt);
     }
-
     public void TryDie()
     {
         ChangeState(State.Die);
     }
 
-    public void KnockBack(int KnockBackDirection)
+    public void KnockBack(int knockBackDirection)
     {
-        
         _rb.velocity = Vector2.zero;
-        _rb.AddForce(new Vector2(KnockBackDirection * _KnockBackForce.x, _KnockBackForce.y), ForceMode2D.Impulse);
+        _rb.AddForce(new Vector2(knockBackDirection * _knockBackForce.x, _knockBackForce.y), ForceMode2D.Impulse);
     }
 
     private void Awake()
@@ -167,13 +164,14 @@ public class EnemyController : MonoBehaviour
 
         if (_state != State.Hurt &&
             _state != State.Die)
-
-            if (_isMovable)
         {
-            if (Mathf.Abs(_move.x) > 0.0f)
-                ChangeState(State.Move);
-            else
-                ChangeState(State.Idle);
+            if (_isMovable)
+            {
+                if (Mathf.Abs(_move.x) > 0.0f)
+                    ChangeState(State.Move);
+                else
+                    ChangeState(State.Idle);
+            }
         }
 
         UpdateState();
@@ -393,7 +391,7 @@ public class EnemyController : MonoBehaviour
             case AttackState.Idle:
                 break;
             case AttackState.Prepare:
-                _isMovable= false;
+                _isMovable = false;
                 _isDirectionChangable = false;
                 _move.x = 0.0f;
                 _rb.velocity = Vector2.zero;
@@ -419,8 +417,6 @@ public class EnemyController : MonoBehaviour
             case HurtState.Prepare:
                 _isMovable = false;
                 _isDirectionChangable = false;
-                //_move.x = 0;
-                //_rb.velocity = Vector2.zero;
                 _animationTimer = _hurtTime;
                 _animator.Play("Hurt");
                 _hurtState = HurtState.OnAction;

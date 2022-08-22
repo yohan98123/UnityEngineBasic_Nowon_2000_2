@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
         Dash,
         Slide,
         Crouch,
-        DownJump
+        DownJump,
+        Hurt,
+        Die
     }
 
     private enum IdleState
@@ -90,6 +92,24 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
+
+    private enum HurtState
+    {
+        Idle,
+        Prepare,
+        Casting,
+        OnAction,
+        Finish
+    }
+
+    private enum DieState
+    {
+        Idle,
+        Prepare,
+        Casting,
+        OnAction,
+        Finish
+    }
     public State state;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private MoveState _moveState;
@@ -100,6 +120,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private DashState _dashState;
     [SerializeField] private CrouchState _crouchState;
     [SerializeField] private DownJumpState _downJumpState;
+    [SerializeField] private HurtState _hurtState;
+    [SerializeField] private DieState _dieState;
     private Vector2 _move;
     [SerializeField] private float _moveSpeed = 1.0f;
     [SerializeField] private float _jumpForce = 2.0f;
@@ -145,13 +167,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 _colSizeOrigin;
     [SerializeField] private Vector2 _colOffsetCrouch = new Vector2(0.0f, 0.075f);
     [SerializeField] private Vector2 _colSizeCrouch = new Vector2(0.15f, 0.15f);
-    [SerializeField] private Vector2 _KnockBackForce;
+    [SerializeField] private Vector2 _knockBackForce;
+
 
     private bool _isMovable = true;
     private bool _isDirectionChangable = true;
     private float _slideAnimationTime;
     private float _attackAnimationTime;
     private float _dashAnimationTime;
+    private float _hurtAnimationTime;
+   
     private float _animationTimer;
 
 
@@ -160,17 +185,18 @@ public class PlayerController : MonoBehaviour
 
     public void TryHurt()
     {
-         // todo -> changestate to hurt
+        if (state != State.Attack)
+            ChangeState(State.Hurt);
+            
     }
-
     public void TryDie()
     {
-        // todo -> changestate to Die
+        ChangeState(State.Die);
     }
     public void KnockBack()
     {
         _rb.velocity = Vector2.zero;
-        _rb.AddForce(new Vector2(-_direction * _KnockBackForce.x, _KnockBackForce.y), ForceMode2D.Impulse);
+        _rb.AddForce(new Vector2(-_direction * _knockBackForce.x, _knockBackForce.y), ForceMode2D.Impulse);
     }
 
     private void Awake()
@@ -186,6 +212,8 @@ public class PlayerController : MonoBehaviour
         _slideAnimationTime = GetAnimationTime("Slide");
         _attackAnimationTime = GetAnimationTime("Attack");
         _dashAnimationTime = GetAnimationTime("Dash");
+        _hurtAnimationTime = GetAnimationTime("Hurt");
+        
     }
 
     private void Update()
@@ -197,16 +225,20 @@ public class PlayerController : MonoBehaviour
             else if (h > 0.0f)
                 direction = 1;
         }
-
-        if (_isMovable)
+        if (state != State.Hurt &&
+            state != State.Die)
         {
-            _move.x = h;
+            if (_isMovable)
+            {
+                _move.x = h;
 
-            if (Mathf.Abs(_move.x) > 0.0f)
-                ChangeState(State.Move);
-            else
-                ChangeState(State.Idle);
+                if (Mathf.Abs(_move.x) > 0.0f)
+                    ChangeState(State.Move);
+                else
+                    ChangeState(State.Idle);
+            }
         }
+        
 
         // 점프
         if (Input.GetKeyDown(KeyCode.LeftAlt))
@@ -299,6 +331,12 @@ public class PlayerController : MonoBehaviour
             case State.DownJump:
                 UpdateDownJumpState();
                 break;
+            case State.Hurt:
+                UpdateHurtState();
+                break;
+            case State.Die:
+                UpdateDieState();
+                break;
             default:
                 break;
         }
@@ -309,7 +347,7 @@ public class PlayerController : MonoBehaviour
         if (state == newState)
             return;
 
-        // 이전 상태 머신 초기화
+        // 이전 하위 상태 머신 초기화
         switch (state)
         {
             case State.Idle:
@@ -342,6 +380,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case State.DownJump:
                 _downJumpState = DownJumpState.Idle;
+                break;
+            case State.Hurt:
+                _hurtState = HurtState.Idle;
+                break;
+            case State.Die:
+                _dieState = DieState.Idle;
                 break;
             default:
                 break;
@@ -380,6 +424,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case State.DownJump:
                 _downJumpState = DownJumpState.Prepare;
+                break;
+            case State.Hurt:
+                _hurtState = HurtState.Prepare;
+                break;
+            case State.Die:
+                _dieState = DieState.Prepare;
                 break;
             default:
                 break;
@@ -675,6 +725,62 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case DownJumpState.Finish:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateHurtState()
+    {
+        switch (_hurtState)
+        {
+            case HurtState.Idle:
+                break;
+            case HurtState.Prepare:
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _animator.Play("Hurt");
+                _animationTimer = _hurtAnimationTime;
+                _hurtState = HurtState.OnAction;
+                break;
+            case HurtState.Casting:
+                break;
+            case HurtState.OnAction:
+                if(_animationTimer < 0)
+                {
+                    ChangeState(State.Idle);
+                }
+                else
+                {
+                    _animationTimer -= Time.deltaTime;
+                }
+                break;
+            case HurtState.Finish:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateDieState()
+    {
+        switch (_dieState)
+        {
+            case DieState.Idle:
+                break;
+            case DieState.Prepare:
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _animator.Play("Die");
+                _dieState = DieState.OnAction;
+                break;
+            case DieState.Casting:
+                break;
+            case DieState.OnAction:
+                // nothing to do
+                break;
+            case DieState.Finish:
                 break;
             default:
                 break;

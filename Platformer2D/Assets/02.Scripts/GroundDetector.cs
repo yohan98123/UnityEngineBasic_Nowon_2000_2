@@ -62,7 +62,7 @@ public class GroundDetector : MonoBehaviour
         Physics2D.IgnoreCollision(_col, targetCol, true);
         float targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
 
-        // 플레이어가 타겟 그라운드를 지나는지 체크
+        // 플레이어가 타겟 그라운드를 지나가는지 체크
         yield return new WaitUntil(() =>
         {
             return _col.transform.position.y < targetColCenter - targetCol.offset.y;
@@ -75,7 +75,7 @@ public class GroundDetector : MonoBehaviour
             {
                 targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
 
-                // 올라가면서 통과, 내려가면서 통과 체크
+                //  올라가면서 통과, 내려가면서 통과 체크
                 if (_col.transform.position.y > targetColCenter + _col.size.y + _size.y ||
                     _col.transform.position.y + _col.size.y < targetColCenter - _col.size.y - _size.y)
                 {

@@ -964,7 +964,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   _dieState: 0
   _aiState: 0
   _aiAutoFollow: 1
-  _aiAttackable: 0
+  _aiAttackable: 1
   _aiTargetDetectRange: 0.7
   _aiBehaviorTimeMin: 0.1
   _aiBehaviorTimeMax: 1
@@ -1179,8 +1179,8 @@ MonoBehaviour:
   _directionInit: -1
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 16384
-  _KnockBackForce: {x: 0.5, y: 0}
+    m_Bits: 2146304
+  _knockBackForce: {x: 1, y: 1}
 --- !u!114 &807323998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,6 +1243,8 @@ MonoBehaviour:
   _dashState: 0
   _crouchState: 0
   _downJumpState: 0
+  _hurtState: 0
+  _dieState: 0
   _moveSpeed: 1
   _jumpForce: 3
   _slideSpeed: 3
@@ -1256,7 +1258,7 @@ MonoBehaviour:
   _directionInit: 1
   _colOffsetCrouch: {x: 0, y: 0.075}
   _colSizeCrouch: {x: 0.15, y: 0.15}
-  _KnockBackForce: {x: 0.5, y: 0.5}
+  _knockBackForce: {x: 0.7, y: 0.7}
 --- !u!4 &830322353
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,9 +1358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42e2c7f2492d064189a14f75c602052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   _hpBar: {fileID: 724231084}
-  _hpMax: 50
+  _hpMax: 10
 --- !u!1 &975557207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71f57f61de6633743a720938077a69de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c98ef26d36aa8b4aba693b5f40497fd, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1905,7 +1907,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

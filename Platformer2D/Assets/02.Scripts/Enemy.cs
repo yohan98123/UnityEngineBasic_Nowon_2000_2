@@ -5,16 +5,16 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     private int _hp;
-    public int hp 
+    public int hp
     {
-        get 
+        get
         {
             return _hp;
         }
         set
         {
-            if(value < 0)
-               value = 0;
+            if (value < 0)
+                value = 0;
 
             _hpBar.value = (float)value / _hpMax;
             _hp = value;
@@ -26,10 +26,13 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private LayerMask _targetLayer;
     private EnemyController _controller;
-
+    private CapsuleCollider2D _col;
     public void Hurt(int damage)
     {
         hp -= damage;
+        DamagePopUp.Create(transform.position + Vector3.up * _col.size.y * 0.7f,
+                          damage,
+                          gameObject.layer);
         if (_hp > 0)
             _controller.TryHurt();
         else
@@ -37,9 +40,11 @@ public class Enemy : MonoBehaviour
     }
 
 
+
     private void Awake()
     {
         _controller = GetComponent<EnemyController>();
+        _col = GetComponent<CapsuleCollider2D>();
         hp = _hpMax;
     }
 
@@ -55,7 +60,7 @@ public class Enemy : MonoBehaviour
                     if (player.invincible == false)
                     {
                         player.Hurt(_damage);
-                        go.GetComponent<PlayerController>().KnockBack();                        
+                        go.GetComponent<PlayerController>().KnockBack();
                     }
                 }
             }
