@@ -58,11 +58,18 @@
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\GroundDetector.cs" />
     <Compile Include="Assets\02.Scripts\PlayerController.cs" />
+    <Compile Include="Assets\02.Scripts\DamagePopUpAssets.cs" />
     <Compile Include="Assets\02.Scripts\Player.cs" />
+    <Compile Include="Assets\02.Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\02.Scripts\EnemyController.cs" />
     <Compile Include="Assets\02.Scripts\Enemy.cs" />
-    <Compile Include="Assets\02.Scripts\DamagePopUp.cs" />
-    <Compile Include="Assets\02.Scripts\DamagePopUpAssets.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineBase.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineManager.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineIdle.cs" />
+    <Compile Include="Assets\02.Scripts\AnimationManager.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineJump.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineMove.cs" />
+    <Compile Include="Assets\02.Scripts\StateMachineFall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
