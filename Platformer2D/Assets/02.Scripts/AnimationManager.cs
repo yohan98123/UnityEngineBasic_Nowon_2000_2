@@ -10,7 +10,7 @@ public class AnimationManager : MonoBehaviour
     public void Play(string clipName) => animator.Play(clipName);
 
 
-    private float GetAnimationTime(string clipName)
+    public float GetAnimationTime(string clipName)
     {
         RuntimeAnimatorController rac = animator.runtimeAnimatorController;
         for (int i = 0; i < rac.animationClips.Length; i++)

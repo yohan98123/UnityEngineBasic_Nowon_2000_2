@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public abstract class StateMachineBase
 {
+    public KeyCode shortKey;
     protected enum State
     {
         Idle,
@@ -14,7 +15,7 @@ public abstract class StateMachineBase
         WaitForErrorClear
     }
     protected State state { get; set; }
-    protected StateMachineManager.State machineState { get; set; }
+    protected StateMachineManager.State managerState { get; set; }
     protected StateMachineManager manager { get; set; }
     protected AnimationManager animationManager { get; set; }
 
@@ -22,7 +23,9 @@ public abstract class StateMachineBase
                             StateMachineManager manager,
                             AnimationManager animationManager)
     {
+        this.managerState = machineState;
         this.manager = manager;
+        this.animationManager = animationManager;
     }
     
 

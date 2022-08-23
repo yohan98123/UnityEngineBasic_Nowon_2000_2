@@ -45,7 +45,7 @@ public class StateMachineFall : StateMachineBase
 
     public override StateMachineManager.State UpdateState()
     {
-        StateMachineManager.State nextState = machineState;
+        StateMachineManager.State nextState = managerState;
         switch (state)
         {
             case State.Idle:
