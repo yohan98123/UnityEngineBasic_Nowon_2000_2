@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    public bool isReady {  get => animator != null; }
-   
+    public bool isReady { get => animator != null; }
     public Animator animator { get; private set; }
 
     public void Play(string clipName) => animator.Play(clipName);
-
-
     public float GetAnimationTime(string clipName)
     {
         RuntimeAnimatorController rac = animator.runtimeAnimatorController;
@@ -25,6 +22,7 @@ public class AnimationManager : MonoBehaviour
         Debug.LogWarning($"GetAnimationTime : {clipName} 을 찾을 수 없습니다.");
         return -1.0f;
     }
+
     private void Awake()
     {
         animator = GetComponent<Animator>();

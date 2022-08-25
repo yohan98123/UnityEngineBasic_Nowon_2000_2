@@ -23,7 +23,6 @@ public class StateMachineDash : StateMachineBase
         manager.isMovable = false;
         manager.isDirectionChangable = false;
         state = State.Prepare;
-
     }
 
     public override void FixedUpdateState()
@@ -35,13 +34,13 @@ public class StateMachineDash : StateMachineBase
             case State.Prepare:
                 break;
             case State.Casting:
-                _rb.velocity = Vector2.right * manager.direction * _dashSpeed / 0.5f;
+                _rb.velocity = Vector2.right * manager.direction * _dashSpeed * 0.5f;
                 break;
             case State.OnAction:
                 _rb.velocity = Vector2.right * manager.direction * _dashSpeed;
                 break;
             case State.Finish:
-                _rb.velocity = Vector2.right * manager.direction * _dashSpeed / 0.2f;
+                _rb.velocity = Vector2.right * manager.direction * _dashSpeed * 0.2f;
                 break;
             case State.Error:
                 break;
@@ -71,6 +70,7 @@ public class StateMachineDash : StateMachineBase
     public override StateMachineManager.State UpdateState()
     {
         StateMachineManager.State nextState = managerState;
+
         switch (state)
         {
             case State.Idle:
@@ -105,6 +105,7 @@ public class StateMachineDash : StateMachineBase
             default:
                 break;
         }
+
         return nextState;
     }
 }

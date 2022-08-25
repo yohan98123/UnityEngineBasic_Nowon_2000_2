@@ -58,7 +58,7 @@ public class StateMachineCrouch : StateMachineBase
             case State.Idle:
                 break;
             case State.Prepare:
-                manager.ReSetVelocity();
+                manager.ResetVelocity();
                 animationManager.Play("Crouch");
                 state = State.OnAction;
                 break;

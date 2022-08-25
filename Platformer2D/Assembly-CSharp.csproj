@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\02.Scripts\Player\StateMachineMove.cs" />
-    <Compile Include="Assets\02.Scripts\ShortKeySettings.cs" />
     <Compile Include="Assets\02.Scripts\GroundDetector.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineBase.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\02.Scripts\DamagePopUpAssets.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineCrouch.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineFall.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineSlide.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineDash.cs" />
@@ -74,7 +74,9 @@
     <Compile Include="Assets\02.Scripts\Enemy.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineJump.cs" />
     <Compile Include="Assets\02.Scripts\AnimationManager.cs" />
-    <Compile Include="Assets\02.Scripts\Player\StateMachineCrouch.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineHurt.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineDie.cs" />
+    <Compile Include="Assets\02.Scripts\EdgeDetector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

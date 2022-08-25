@@ -9,7 +9,7 @@ public class StateMachineAttack : StateMachineBase
     public StateMachineAttack(StateMachineManager.State machineState,
                               StateMachineManager manager,
                               AnimationManager animationManager)
-         : base(machineState, manager, animationManager)
+        : base(machineState, manager, animationManager)
     {
         shortKey = KeyCode.A;
         _animationTime = animationManager.GetAnimationTime("Attack");
@@ -24,7 +24,6 @@ public class StateMachineAttack : StateMachineBase
 
     public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()
@@ -52,15 +51,15 @@ public class StateMachineAttack : StateMachineBase
             case State.Idle:
                 break;
             case State.Prepare:
-                manager.ReSetVelocity();
+                manager.ResetVelocity();
                 animationManager.Play("Attack");
                 _animationTimer = _animationTime;
-                state++;
+                state = State.OnAction;
                 break;
             case State.Casting:
                 break;
             case State.OnAction:
-                if(_animationTimer < 0)
+                if (_animationTimer < 0)
                 {
                     state = State.Finish;
                 }
@@ -76,6 +75,7 @@ public class StateMachineAttack : StateMachineBase
             default:
                 break;
         }
+
         return nextState;
     }
 }

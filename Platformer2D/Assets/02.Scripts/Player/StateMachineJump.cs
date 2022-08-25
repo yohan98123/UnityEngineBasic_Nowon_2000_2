@@ -17,18 +17,19 @@ public class StateMachineJump : StateMachineBase
         shortKey = KeyCode.LeftAlt;
         _groundDetector = manager.GetComponent<GroundDetector>();
         _rb = manager.GetComponent<Rigidbody2D>();
+
     }
 
     public override void Execute()
     {
         manager.isMovable = false;
-        manager.isDirectionChangable = false;
+        manager.isDirectionChangable = true;
         state = State.Prepare;
     }
 
     public override void FixedUpdateState()
     {
-    }   
+    }
 
     public override void ForceStop()
     {
@@ -41,7 +42,7 @@ public class StateMachineJump : StateMachineBase
         bool isOK = false;
         if (_groundDetector.isDetected)
         {
-            if (manager.state != StateMachineManager.State.Crouch)
+            if (manager.state == StateMachineManager.State.Crouch)
             {
                 _isDownJump = true;
                 isOK = true;
@@ -52,7 +53,7 @@ public class StateMachineJump : StateMachineBase
                 _isDownJump = false;
                 isOK = true;
             }
-        }           
+        }
         return isOK;
     }
 
@@ -61,10 +62,10 @@ public class StateMachineJump : StateMachineBase
         if (_isDownJump)
             return DownJumpWorkflow();
         else
-            return NomalJumpWorkflow();
+            return NormalJumpWorkflow();
     }
 
-    private StateMachineManager.State NomalJumpWorkflow()
+    private StateMachineManager.State NormalJumpWorkflow()
     {
         StateMachineManager.State nextState = managerState;
         switch (state)
@@ -110,7 +111,7 @@ public class StateMachineJump : StateMachineBase
             case State.Idle:
                 break;
             case State.Prepare:
-                animationManager.Play("Jump");               
+                animationManager.Play("Jump");
                 _groundDetector.IgnoreLastGround();
                 state++;
                 break;
@@ -118,7 +119,6 @@ public class StateMachineJump : StateMachineBase
                 _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
                 _rb.AddForce(Vector2.up * _downJumpForce, ForceMode2D.Impulse);
                 state++;
-                
                 break;
             case State.OnAction:
                 if (_rb.velocity.y < 0.0f)

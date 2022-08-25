@@ -2201,9 +2201,9 @@ GameObject:
   - component: {fileID: 1923711736}
   - component: {fileID: 1923711735}
   - component: {fileID: 1923711734}
-  - component: {fileID: 1923711738}
   - component: {fileID: 1923711731}
   - component: {fileID: 1923711733}
+  - component: {fileID: 1923711738}
   - component: {fileID: 1923711732}
   m_Layer: 14
   m_Name: Player Clone
@@ -2224,6 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63163e6854130a40a8ef9f5e1acf098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isReady: 0
   state: 0
   _directionInit: 1
   _moveSpeed: 2
@@ -2232,6 +2233,7 @@ MonoBehaviour:
   _attackTargetLayer:
     serializedVersion: 2
     m_Bits: 1048576
+  _knockBackForce: {x: 1, y: 1}
 --- !u!114 &1923711732
 MonoBehaviour:
   m_ObjectHideFlags: 0

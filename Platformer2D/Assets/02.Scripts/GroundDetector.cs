@@ -61,12 +61,12 @@ public class GroundDetector : MonoBehaviour
         tmpCol = targetCol; // for Reading
         isIgnoringGround = true;
         Physics2D.IgnoreCollision(_col, targetCol, true);
-        float targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
+        float targetColCenter = targetCol.transform.position.y + targetCol.offset.y * targetCol.transform.lossyScale.y;
 
         // 플레이어가 타겟 그라운드를 지나가는지 체크
         yield return new WaitUntil(() =>
         {
-            return _col.transform.position.y < targetColCenter - targetCol.offset.y;
+            return _col.transform.position.y < targetColCenter;
         });
 
         yield return new WaitUntil(() =>
@@ -74,11 +74,11 @@ public class GroundDetector : MonoBehaviour
             bool isPassed = false;
             if (targetCol != null)
             {
-                targetColCenter = targetCol.transform.position.y + targetCol.offset.y;
+                targetColCenter = targetCol.transform.position.y + targetCol.offset.y * targetCol.transform.lossyScale.y;
 
                 //  올라가면서 통과, 내려가면서 통과 체크
-                if (_col.transform.position.y > targetColCenter + _col.size.y / 2.0f + _size.y ||
-                    _col.transform.position.y + _col.size.y < targetColCenter - _col.size.y / 2.0f - _size.y)
+                if (_col.transform.position.y > targetColCenter + _size.y ||
+                    _col.transform.position.y < targetColCenter - _size.y)
                 {
                     isPassed = true;
                 }
@@ -104,15 +104,15 @@ public class GroundDetector : MonoBehaviour
         float targetColCenter = tmpCol.transform.position.y + tmpCol.offset.y;
         Gizmos.color = Color.black;
         Gizmos.DrawSphere(new Vector3(transform.position.x,
-                          targetColCenter + _col.size.y / 2.0f + _size.y,
+                          targetColCenter + _size.y - _col.transform.position.y,
                           0),
                           0.02f);
         Gizmos.DrawSphere(new Vector3(transform.position.x,
-                          targetColCenter - _col.size.y / 2.0f - _size.y,
+                          targetColCenter - _size.y - _col.size.y - _col.transform.position.y,
                           0),
                           0.02f);
         Gizmos.DrawSphere(new Vector3(transform.position.x,
-                          targetColCenter - tmpCol.offset.y,
+                          targetColCenter,
                           0),
                           0.02f);
     }

@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
+
     public State state;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private MoveState _moveState;
@@ -176,7 +177,6 @@ public class PlayerController : MonoBehaviour
     private float _attackAnimationTime;
     private float _dashAnimationTime;
     private float _hurtAnimationTime;
-   
     private float _animationTimer;
 
 
@@ -187,7 +187,6 @@ public class PlayerController : MonoBehaviour
     {
         if (state != State.Attack)
             ChangeState(State.Hurt);
-            
     }
     public void TryDie()
     {
@@ -213,7 +212,7 @@ public class PlayerController : MonoBehaviour
         _attackAnimationTime = GetAnimationTime("Attack");
         _dashAnimationTime = GetAnimationTime("Dash");
         _hurtAnimationTime = GetAnimationTime("Hurt");
-        
+
     }
 
     private void Update()
@@ -225,6 +224,7 @@ public class PlayerController : MonoBehaviour
             else if (h > 0.0f)
                 direction = 1;
         }
+
         if (state != State.Hurt &&
             state != State.Die)
         {
@@ -238,9 +238,8 @@ public class PlayerController : MonoBehaviour
                     ChangeState(State.Idle);
             }
         }
-        
 
-        // 점프
+        // ????
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             if (state != State.Crouch)
@@ -256,7 +255,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // 슬라이드
+        // ???????
         if (Input.GetKeyDown(KeyCode.X) &&
             (state == State.Idle ||
              state == State.Move))
@@ -264,7 +263,7 @@ public class PlayerController : MonoBehaviour
             ChangeState(State.Slide);
         }
 
-        // 공격
+        // ????
         if (Input.GetKeyDown(KeyCode.A) &&
             (state == State.Idle ||
              state == State.Move ||
@@ -274,7 +273,7 @@ public class PlayerController : MonoBehaviour
             ChangeState(State.Attack);
         }
 
-        // 대쉬
+        // ?뽬
         if (Input.GetKeyDown(KeyCode.LeftShift) &&
             (state == State.Idle ||
              state == State.Move ||
@@ -284,7 +283,7 @@ public class PlayerController : MonoBehaviour
             ChangeState(State.Dash);
         }
 
-        // 숙이기
+        // ?????
         if (Input.GetKey(KeyCode.DownArrow) &&
             (state == State.Idle ||
              state == State.Move))
@@ -347,7 +346,7 @@ public class PlayerController : MonoBehaviour
         if (state == newState)
             return;
 
-        // 이전 하위 상태 머신 초기화
+        // ???? ???? ???? ??? ????
         switch (state)
         {
             case State.Idle:
@@ -391,7 +390,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        // 다음 하위 상태 머신 준비
+        // ???? ???? ???? ??? ???
         switch (newState)
         {
             case State.Idle:
@@ -747,7 +746,7 @@ public class PlayerController : MonoBehaviour
             case HurtState.Casting:
                 break;
             case HurtState.OnAction:
-                if(_animationTimer < 0)
+                if (_animationTimer < 0)
                 {
                     ChangeState(State.Idle);
                 }
@@ -797,7 +796,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Debug.LogWarning($"GetAnimationTime : {clipName} 을 찾을 수 없습니다.");
+        Debug.LogWarning($"GetAnimationTime : {clipName} ?? ??? ?? ???????.");
         return -1.0f;
     }
 

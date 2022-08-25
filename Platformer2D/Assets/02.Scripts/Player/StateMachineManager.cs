@@ -16,11 +16,10 @@ public class StateMachineManager : MonoBehaviour
         Attack,
         Dash,
         Slide,
-        Crouch,        
+        Crouch,
         Hurt,
         Die
     }
-
     public State state;
 
     private Dictionary<State, StateMachineBase> _machines = new Dictionary<State, StateMachineBase>();
@@ -47,12 +46,10 @@ public class StateMachineManager : MonoBehaviour
             }
         }
     }
-    
     [SerializeField] private int _directionInit;
     public bool isMovable { get; set; }
     public bool isDirectionChangable { get; set; }
     private Vector2 _move;
-
     [SerializeField] private float _moveSpeed = 2.0f;
 
     private AnimationManager _animationManager;
@@ -60,16 +57,18 @@ public class StateMachineManager : MonoBehaviour
     private Rigidbody2D _rb;
     private Player _player;
 
+
     [SerializeField] private Vector2 _attackHitCastCenter = new Vector2(0.2f, 0.2f);
     [SerializeField] private Vector2 _attackHitCastSize = new Vector2(0.4f, 0.4f);
     [SerializeField] private LayerMask _attackTargetLayer;
+    [SerializeField] private Vector2 _knockBackForce;
 
     private float h => Input.GetAxis("Horizontal");
     private float v => Input.GetAxis("Vertical");
-    //==============================================================================
-    //**********************************Public Method*******************************
-    //==============================================================================
 
+    //==========================================================================
+    //*************************** Public Methods *******************************
+    //==========================================================================
     public void ChangeState(State newState)
     {
         if (state == newState ||
@@ -81,18 +80,25 @@ public class StateMachineManager : MonoBehaviour
         _current = _machines[newState];
         state = newState;
     }
-    public void ReSetVelocity()
+
+    public void ResetVelocity()
     {
         _move.x = 0.0f;
         _rb.velocity = Vector2.zero;
     }
 
-    //==============================================================================
-    //**********************************Public Method*******************************
-    //==============================================================================
+    public void KnockBack()
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(new Vector2(-_direction * _knockBackForce.x, _knockBackForce.y), ForceMode2D.Impulse);
+    }
+
+    //==========================================================================
+    //*************************** Private Methods ******************************
+    //==========================================================================
     private void Awake()
     {
-        StartCoroutine(E_Init());                
+        StartCoroutine(E_Init());
     }
 
     IEnumerator E_Init()
@@ -110,7 +116,6 @@ public class StateMachineManager : MonoBehaviour
         isReady = true;
     }
 
-
     private void InitStateMachines()
     {
         Array values = Enum.GetValues(typeof(State));
@@ -118,7 +123,7 @@ public class StateMachineManager : MonoBehaviour
         {
             AddStateMachine((State)value);
         }
-    } 
+    }
 
     private void AddStateMachine(State state)
     {
@@ -129,32 +134,31 @@ public class StateMachineManager : MonoBehaviour
         Type type = Type.GetType(typeName);
         if (type != null)
         {
-           ConstructorInfo constructorInfo =
-            type.GetConstructor(new Type[]
-            {
-                typeof(State),
-                typeof(StateMachineManager),
-                typeof(AnimationManager)
-
-            });
+            ConstructorInfo constructorInfo =
+                type.GetConstructor(new Type[]
+                {
+                    typeof(State),
+                    typeof(StateMachineManager),
+                    typeof(AnimationManager)
+                });
 
             StateMachineBase machine =
-            constructorInfo.Invoke(new object[]
-            {
-                state,
-                this,
-                _animationManager
-            }) as StateMachineBase;
+                constructorInfo.Invoke(new object[]
+                {
+                    state,
+                    this,
+                    _animationManager
+                }) as StateMachineBase;
 
             _machines.Add(state, machine);
             if (machine.shortKey != KeyCode.None)
-            _states.Add(machine.shortKey, state);
+                _states.Add(machine.shortKey, state);
 
-            Debug.Log($"{state} 의 머신이 등록 되었습니다.");
+            Debug.Log($"{state} ?? ????? ??? ????????.");
         }
         else
         {
-            Debug.LogWarning($"{state} 의 머신을 찾을 수 없습니다.");
+            Debug.LogWarning($"{state} ?? ????? ??? ?? ???????.");
         }
     }
 
@@ -189,6 +193,7 @@ public class StateMachineManager : MonoBehaviour
                 return;
             }
         }
+
         ChangeState(_current.UpdateState());
     }
 
@@ -201,7 +206,7 @@ public class StateMachineManager : MonoBehaviour
         transform.position += new Vector3(_move.x * _moveSpeed, _move.y, 0) * Time.fixedDeltaTime;
     }
 
-    
+
 
     private void AttackHit()
     {

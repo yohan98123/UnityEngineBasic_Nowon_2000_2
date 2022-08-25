@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public abstract class StateMachineBase
 {
@@ -18,7 +16,6 @@ public abstract class StateMachineBase
     protected StateMachineManager.State managerState { get; set; }
     protected StateMachineManager manager { get; set; }
     protected AnimationManager animationManager { get; set; }
-
     public StateMachineBase(StateMachineManager.State machineState,
                             StateMachineManager manager,
                             AnimationManager animationManager)
@@ -27,7 +24,6 @@ public abstract class StateMachineBase
         this.manager = manager;
         this.animationManager = animationManager;
     }
-    
 
     public abstract bool IsExecuteOK();
     public abstract void Execute();

@@ -16,12 +16,10 @@ public class StateMachineIdle : StateMachineBase
         manager.isMovable = true;
         manager.isDirectionChangable = true;
         state = State.Prepare;
-
     }
 
     public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()
