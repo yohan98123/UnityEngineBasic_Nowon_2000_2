@@ -17,7 +17,6 @@ public class StateMachineJump : StateMachineBase
         shortKey = KeyCode.LeftAlt;
         _groundDetector = manager.GetComponent<GroundDetector>();
         _rb = manager.GetComponent<Rigidbody2D>();
-
     }
 
     public override void Execute()
@@ -85,12 +84,14 @@ public class StateMachineJump : StateMachineBase
                 }
                 break;
             case State.OnAction:
-                if (_rb.velocity.y < 0)
+                if (_rb.velocity.y < 0 ||
+                    _groundDetector.isDetected == true)
                 {
                     state++;
                 }
                 break;
             case State.Finish:
+                if (_groundDetector.isDetected ==true)
                 nextState = StateMachineManager.State.Fall;
                 break;
             case State.Error:

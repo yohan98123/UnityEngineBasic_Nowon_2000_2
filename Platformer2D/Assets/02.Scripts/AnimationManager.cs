@@ -5,8 +5,13 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     public bool isReady { get => animator != null; }
+    public float speed 
+    { 
+        get => animator.speed; 
+        set => animator.speed = value;
+    }
     public Animator animator { get; private set; }
-
+    
     public void Play(string clipName) => animator.Play(clipName);
     public float GetAnimationTime(string clipName)
     {

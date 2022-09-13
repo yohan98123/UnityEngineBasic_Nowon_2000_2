@@ -23,10 +23,11 @@ TagManager:
   - PlayerColision
   - 
   - 
-  - 
-  - 
+  - Ladder
+  - portal
   - Enemy
   - EnemyColision
+  - EnemyProjectile
   - 
   - 
   - 
@@ -34,15 +35,23 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - 3D
   - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 1465391435
+  - name: Background
+    uniqueID: 1463253735
+    locked: 0
+  - name: BackgroundObjects
+    uniqueID: 2963685779
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3582231597
+    locked: 0
+  - name: ObstaclesInteractable
+    uniqueID: 1162002413
     locked: 0
   - name: Player
     uniqueID: 2660115115
@@ -52,6 +61,9 @@ TagManager:
     locked: 0
   - name: EnemyUI
     uniqueID: 3945247567
+    locked: 0
+  - name: Ground
+    uniqueID: 1465391435
     locked: 0
   - name: DamagePopUp
     uniqueID: 1878405969

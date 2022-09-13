@@ -56,9 +56,13 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02.Scripts\CameraHandler.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineDie.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineMove.cs" />
     <Compile Include="Assets\02.Scripts\GroundDetector.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineLadder.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineBase.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineEdgeGrab.cs" />
     <Compile Include="Assets\02.Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\02.Scripts\DamagePopUpAssets.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineCrouch.cs" />
@@ -67,16 +71,23 @@
     <Compile Include="Assets\02.Scripts\Player\StateMachineDash.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineIdle.cs" />
     <Compile Include="Assets\02.Scripts\Player\Player.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemyControllerForNepenthes.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineAttack.cs" />
+    <Compile Include="Assets\02.Scripts\LadderDetector.cs" />
+    <Compile Include="Assets\02.Scripts\Player\StateMachineHurt.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineManager.cs" />
     <Compile Include="Assets\02.Scripts\DamagePopUp.cs" />
-    <Compile Include="Assets\02.Scripts\EnemyController.cs" />
-    <Compile Include="Assets\02.Scripts\Enemy.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\Projectile.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\EnemyControllerForDarkNepenthes.cs" />
+    <Compile Include="Assets\02.Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\02.Scripts\Player\StateMachineJump.cs" />
-    <Compile Include="Assets\02.Scripts\AnimationManager.cs" />
-    <Compile Include="Assets\02.Scripts\Player\StateMachineHurt.cs" />
-    <Compile Include="Assets\02.Scripts\Player\StateMachineDie.cs" />
     <Compile Include="Assets\02.Scripts\EdgeDetector.cs" />
+    <Compile Include="Assets\02.Scripts\AnimationManager.cs" />
+    <Compile Include="Assets\02.Scripts\SceneManagement\SceneMover.cs" />
+    <Compile Include="Assets\02.Scripts\SceneManagement\SceneMoveBotton.cs" />
+    <Compile Include="Assets\02.Scripts\Portal.cs" />
+    <Compile Include="Assets\02.Scripts\SceneManagement\SceneInformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -705,6 +716,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Extension">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Extension.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
@@ -717,8 +731,8 @@
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    <Reference Include="Unity.Subsystem.Registration">
+      <HintPath>Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -729,6 +743,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -737,6 +754,12 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Editor.dll</HintPath>
@@ -758,6 +781,9 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>

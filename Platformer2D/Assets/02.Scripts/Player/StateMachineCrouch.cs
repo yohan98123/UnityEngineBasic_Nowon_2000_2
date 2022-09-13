@@ -14,7 +14,7 @@ public class StateMachineCrouch : StateMachineBase
                               AnimationManager animationManager)
         : base(machineState, manager, animationManager)
     {
-        shortKey = KeyCode.DownArrow;
+        
         _col = manager.GetComponent<CapsuleCollider2D>();
         _colOffsetOrigin = _col.offset;
         _colSizeOrigin = _col.size;
@@ -65,7 +65,7 @@ public class StateMachineCrouch : StateMachineBase
             case State.Casting:
                 break;
             case State.OnAction:
-                if (Input.GetKeyUp(shortKey))
+                if (Input.GetKeyUp(KeyCode.DownArrow))
                 {
                     nextState = StateMachineManager.State.Idle;
                 }
