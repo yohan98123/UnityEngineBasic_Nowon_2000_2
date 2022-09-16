@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2041823368315416471}
   - component: {fileID: 5147885459518720774}
-  m_Layer: 0
+  - component: {fileID: 7646663974867135657}
+  m_Layer: 12
   m_Name: MachineGun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +50,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 26a4d6522b1c51d41a13aca3dfa985ed, type: 2}
+  node: {fileID: 0}
+--- !u!135 &7646663974867135657
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556018671585722058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &6045261319182122072
 GameObject:
   m_ObjectHideFlags: 0

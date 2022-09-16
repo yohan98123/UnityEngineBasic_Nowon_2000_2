@@ -10,7 +10,13 @@ public class Node : MonoBehaviour
     private Color _originalColor;
     [SerializeField] private Color _buildAvailableColor;
     [SerializeField] private Color _buildNotAvailableColor;
-
+    
+    public void Clear()
+    {
+        if (_towerBuilt != null)
+            Destroy(_towerBuilt.gameObject);
+        _towerBuilt = null;
+    }
     public bool TryBuildTowerHere(string towerName)
     {
         bool isOK = false;
@@ -28,6 +34,7 @@ public class Node : MonoBehaviour
                                            Quaternion.identity,
                                            transform);
             _towerBuilt = built.GetComponent<Tower>();
+            _towerBuilt.node = this;
             isOK = true;
         }
         return isOK;
