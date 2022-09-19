@@ -16,7 +16,7 @@ public class GamePlay : MonoBehaviour
         NextStage,
         LevelCompleted,
         LevelFailed,
-        WaitForUser,
+        WaitForUser
     }
     public States state;
     public LevelInfo levelInfo;
@@ -62,9 +62,7 @@ public class GamePlay : MonoBehaviour
             case States.LevelFailed:
                 break;
             case States.WaitForUser:
-                break;
-            default:
-                break;
+                break;            
         }
     }
 }
