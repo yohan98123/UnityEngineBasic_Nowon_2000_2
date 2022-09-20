@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870759811321013330}
-  - component: {fileID: -4120422426270445739}
   - component: {fileID: 2539349542524725159}
+  - component: {fileID: 5419029159121976829}
   m_Layer: 12
   m_Name: MachineGun2
   m_TagString: Untagged
@@ -32,24 +32,9 @@ Transform:
   m_Children:
   - {fileID: 7059503042885667599}
   - {fileID: 1243436633185723504}
-  - {fileID: 8581187761849587017}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4120422426270445739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560269715657860104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cbaed47a6fb030419fca310dcc395a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  info: {fileID: 11400000, guid: da0a538dee828274f908dbb4705d354b, type: 2}
-  node: {fileID: 0}
 --- !u!135 &2539349542524725159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -63,6 +48,30 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &5419029159121976829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560269715657860104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39635ebf5a0475a45a6e7e0915e560fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: da0a538dee828274f908dbb4705d354b, type: 2}
+  node: {fileID: 0}
+  rotatePoint: {fileID: 1243436633185723504}
+  detectRange: 2.5
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  _bulletPrefab: {fileID: 1776608165082214997, guid: d001d408756690c4eb0b86bf9bca2f6a, type: 3}
+  _firePoints:
+  - {fileID: 8581187761849587017}
+  _damage: 15
+  _reloadTime: 1.5
 --- !u!1 &5331529090769488422
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,13 +95,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5331529090769488422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06531334, y: 1.155165, z: 1.3511963}
+  m_LocalRotation: {x: 0.0009147092, y: 0.0016288152, z: -0.0014009047, w: 0.9999973}
+  m_LocalPosition: {x: -0.012774355, y: 0.6231255, z: 1.3470638}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1870759811321013330}
-  m_RootOrder: 2
+  m_Father: {fileID: 1243436633185723504}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1243436633185337072
 PrefabInstance:
